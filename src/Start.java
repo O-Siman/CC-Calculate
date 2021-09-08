@@ -2,17 +2,45 @@ import java.util.Scanner;
 
 public class Start {
     public static void start() {
-
-        say("Hello there, what's your name?");
-
+        say("What's your name?");
         String name = getLine();
 
-        if (isEqual(name, "Omar"))
-            say("You rock!");
-        
-        else say("Hello, " + name);
+        say(name + " walks into a cave. There is a giant spider on the left and a tunnel on the right.");
+        say("Do you go left or right?");
+        String choice = getLine();
+
+        if (isEqual(choice, "left")) {
+            say("The spider eats you. The end!");
+            return;
+        } else if (isEqual(choice, "right")) {
+            say("You continue walking through the tunnel.");
+        } else {
+            say("Please say left or right.");
+            return;
+        }
+
+        say("You see a snake on the left and another tunnel on the right.");
+        say("Do you go left or right?");
+        String choice2 = getLine();
+
+        if (isEqual(choice2, "left")) {
+            say("The snake eats you. The end!");
+            return;
+        } else if (isEqual(choice2, "right")) {
+            say("You reached the end of the cave! The end.");
+            return;
+        } else {
+            say("Please say left or right.");
+            return;
+        }
+
 
     }
+
+
+
+
+
 
     private static final Scanner scanner = new Scanner(System.in);
 
