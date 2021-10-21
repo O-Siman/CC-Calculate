@@ -2,52 +2,48 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Start coding here!
+        // 5 + 5
+        // 10
 
-        say("What's your name?");
-        String name = getLine();
-        // Player types their name
+        Scanner scanner = new Scanner(System.in);
 
-        say(name + " walks into a cave. There is a giant spider on the left and a tunnel on the right.");
-        // Example output: Omar walks into a cave...
-        say("Do you go left or right?");
-        String choice = getLine();
-        // Player types "left" or "right"
+        say("What's your first number?");
+        double firstNumber = scanner.nextDouble();
+        scanner.nextLine();
 
-        if (isEqual(choice, "left")) {
-            // If they chose to go to the left
-            say("The spider eats you. The end!");
-            return; // End the game
-        } else if (isEqual(choice, "right")) {
-            // If they chose to go to the right
-            say("You continue walking through the tunnel.");
-        } else {
-            // If they didn't choose
-            say("Please say left or right.");
-            return; // End the game
+        say("What operation do you want to use?");
+        String operation = scanner.nextLine();
+
+        say("What's your second number?");
+        double secondNumber = scanner.nextDouble();
+        scanner.nextLine();
+
+        // Addition
+        if (operation.equals("+")) {
+            say("Result: " + (firstNumber + secondNumber));
         }
-
-        say("You see a snake on the left and another tunnel on the right.");
-        say("Do you go left or right?");
-        String choice2 = getLine();
-        // Player types "left" or "right"
-
-        if (isEqual(choice2, "left")) {
-            // If they chose to go to the left
-            say("The snake eats you. The end!");
-            return; // End the game
-        } else if (isEqual(choice2, "right")) {
-            // If they chose to go to the right
-            say("You reached the end of the cave! The end.");
-            return;
-        } else {
-            // If they didn't choose
-            say("Please say left or right.");
-            return; // End the game
+        // Subtraction
+        else if (operation.equals("-")) {
+            say("Result: " + (firstNumber - secondNumber));
         }
-
-
-
+        // Multiplication
+        else if (operation.equals("*")) {
+            say("Result: " + (firstNumber * secondNumber));
+        }
+        // Division
+        else if (operation.equals("/")) {
+            say("Result: " + (firstNumber / secondNumber));
+        }
+        // Exponent
+        else if (operation.equals("^")) {
+            double result = Math.pow(firstNumber, secondNumber);
+            say("Result: " + result);
+        }
+        // Root of index
+        else if (operation.equals("rt")) {
+            double result = Math.pow(firstNumber, 1 / secondNumber);
+            say("Result: " + result);
+        }
 
         // Don't touch anything below here.
     }
